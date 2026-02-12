@@ -54,6 +54,8 @@ body {
     filter: blur(100px);
     opacity: 0.5;
     animation: float 12s infinite ease-in-out alternate;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .blob-1 {
@@ -294,6 +296,10 @@ body {
     margin: 20px;
     position: relative;
     z-index: 1;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    isolation: isolate;
 }
 
 /* ─── Header ─── */
@@ -743,6 +749,9 @@ body {
         padding: 1.5rem;
         margin: 10px;
         border-radius: 16px;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        background: rgba(20, 28, 50, 0.88);
     }
 
     .app-header h1 {
@@ -756,5 +765,9 @@ body {
 
     .todo-timer-row {
         margin-left: 0;
+    }
+
+    .floating-quote {
+        display: none;
     }
 }
