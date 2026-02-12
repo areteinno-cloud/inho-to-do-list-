@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer | 할 일 & 타이머</title>
+    <meta name="description" content="할 일 목록과 작업 타이머를 결합한 생산성 앱">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Floating Motivational Quotes -->
+    <div class="motivation-layer" id="motivation-layer"></div>
+
+    <!-- 3D Space Background -->
+    <canvas id="space-canvas"></canvas>
+
+    <main class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-crosshairs"></i> Focus Timer</h1>
+            <p id="date-display"></p>
+        </header>
+
+        <!-- Total Stats -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fas fa-list-check"></i>
+                <span id="total-tasks">0개 할 일</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <span id="total-time">총 00:00:00</span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="todo-input" placeholder="할 일을 입력하세요..." autocomplete="off">
+            <button id="add-btn" title="추가"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="active">진행중</button>
+            <button class="filter-btn" data-filter="completed">완료</button>
+        </div>
+
+        <ul class="todo-list" id="todo-list">
+            <!-- Tasks will be injected here -->
+        </ul>
+
+        <div class="app-footer">
+            <span id="items-left">0개 남음</span>
+            <button id="clear-completed">완료 항목 삭제</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
